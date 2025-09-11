@@ -2,6 +2,7 @@ package co.edu.uniquindio.biblioteca.Parcial_1_Cesar_Leandro_Ortegon_Londono.mod
 
 import co.edu.uniquindio.biblioteca.Parcial_1_Cesar_Leandro_Ortegon_Londono.enums.TipoHabitacion;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Habitacion {
@@ -9,14 +10,16 @@ public class Habitacion {
     private int numeroHabitacion;
     private double precioHabitacion;
     TipoHabitacion tipoHabitacion;
-    List<ServicioHabitacion> listaServiciosHabitacion;
-    List<Reserva> reservasAsociadas;
+    List<ServicioHabitacion> listaServiciosHabitacion =  new ArrayList<>();
+    List<Reserva> reservasAsociadas =  new ArrayList<>();
 
-    public Habitacion(List<ServicioHabitacion> listaServiciosHabitacion, TipoHabitacion tipoHabitacion, double precioHabitacion, int numeroHabitacion) {
-        this.listaServiciosHabitacion = listaServiciosHabitacion;
+
+    public Habitacion(TipoHabitacion tipoHabitacion, double precioHabitacion, int numeroHabitacion, List<Reserva> reservasAsociadas, List<ServicioHabitacion> listaServiciosHabitacion) {
         this.tipoHabitacion = tipoHabitacion;
         this.precioHabitacion = precioHabitacion;
         this.numeroHabitacion = numeroHabitacion;
+        this.reservasAsociadas = reservasAsociadas;
+        this.listaServiciosHabitacion = listaServiciosHabitacion;
     }
 
     public int getNumeroHabitacion() {
@@ -41,6 +44,14 @@ public class Habitacion {
 
     public void setTipoHabitacion(TipoHabitacion tipoHabitacion) {
         this.tipoHabitacion = tipoHabitacion;
+    }
+
+    public List<Reserva> getReservasAsociadas() {
+        return reservasAsociadas;
+    }
+
+    public void setReservasAsociadas(List<Reserva> reservasAsociadas) {
+        this.reservasAsociadas = reservasAsociadas;
     }
 
 

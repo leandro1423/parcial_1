@@ -6,14 +6,14 @@ import java.util.List;
 public class Hotel {
 
     private List<Habitacion> habitaciones = new ArrayList<>();
-    private List<Cliente> clientes = new ArrayList<>();
-    private List<Reserva> reservas = new ArrayList<>();
+    private List<Cliente> listaClientes = new ArrayList<>();
+    private List<Reserva> listaReservas = new ArrayList<>();
     private List<Servicio> servicios = new ArrayList<>();
 
-    public Hotel(List<Habitacion> habitaciones, List<Cliente> clientes, List<Reserva> reservas, List<Servicio> servicios) {
+    public Hotel(List<Habitacion> habitaciones, List<Cliente> listaClientes, List<Reserva> listaReservas, List<Servicio> servicios) {
         this.habitaciones = habitaciones;
-        this.clientes = clientes;
-        this.reservas = reservas;
+        this.listaClientes = listaClientes;
+        this.listaReservas = listaReservas;
         this.servicios = servicios;
     }
 
@@ -26,19 +26,19 @@ public class Hotel {
     }
 
     public List<Cliente> getClientes() {
-        return clientes;
+        return listaClientes;
     }
 
-    public void setClientes(List<Cliente> clientes) {
-        this.clientes = clientes;
+    public void setClientes(List<Cliente> listaClientes) {
+        this.listaClientes = listaClientes;
     }
 
-    public List<Reserva> getReservas() {
-        return reservas;
+    public List<Reserva> getListaReservas() {
+        return listaReservas;
     }
 
-    public void setReservas(List<Reserva> reservas) {
-        this.reservas = reservas;
+    public void setListaReservas(List<Reserva> listaReservas) {
+        this.listaReservas = listaReservas;
     }
 
     public List<Servicio> getServicios() {

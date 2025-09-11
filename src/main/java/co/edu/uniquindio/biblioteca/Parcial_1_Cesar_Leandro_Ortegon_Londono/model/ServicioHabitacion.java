@@ -2,11 +2,16 @@ package co.edu.uniquindio.biblioteca.Parcial_1_Cesar_Leandro_Ortegon_Londono.mod
 
 import co.edu.uniquindio.biblioteca.Parcial_1_Cesar_Leandro_Ortegon_Londono.enums.TipoHabitacion;
 
-public class ServicioHabitacion extends Habitacion {
+public class ServicioHabitacion extends Servicio {
 
 
+    public ServicioHabitacion(String nombreServicio, double costoServicio) {
+        super(nombreServicio, costoServicio);
+    }
 
-    public ServicioHabitacion(int numeroHabitacion, double precioHabitacion, TipoHabitacion tipoHabitacion) {
-        super(numeroHabitacion, precioHabitacion, tipoHabitacion);
+    @Override
+    public void consumir() {
+
+
     }
 }
