@@ -9,11 +9,11 @@ public interface IReservaService {
 
     void crearReserva(Date fechaEntrada, Date fechaSalida);
 
-    Reserva buscarReservaPorId(String idReserva);
+    Reserva buscarReserva(List<Reserva>reservas ,Date fechaEntrada, Date fechaSalida);
 
-    void actualizarReserva(String idReserva, Date fechaEntrada, Date fechaSalida);
+    void actualizarReserva(Date fechaEntrada, Date fechaSalida);
 
-    void eliminarReserva(String idReserva);
+    void eliminarReserva(Date fechaEntrada, Date fechaSalida);
 
     List<Reserva> listarReservas(); // todas
 

@@ -10,11 +10,11 @@ public class Cliente {
     private List<Reserva> listaReservasAsociadas = new ArrayList<>();
 
 
-    public Cliente(String nombre, String identificacion, List<Reserva> listaReservasAsociadas) {
+    public Cliente(String nombre, String identificacion) {
         this.nombre = nombre;
         this.identificacion = identificacion;
-        this.listaReservasAsociadas = listaReservasAsociadas;
     }
+
 
     public String getNombre() {
         return nombre;
