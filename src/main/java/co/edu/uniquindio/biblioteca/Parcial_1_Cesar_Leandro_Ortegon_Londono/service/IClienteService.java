@@ -4,7 +4,7 @@ import co.edu.uniquindio.biblioteca.Parcial_1_Cesar_Leandro_Ortegon_Londono.mode
 
 public interface IClienteService {
 
-    void crearCliente(String nombre, String identificacion);
+    Cliente crearCliente(String nombre, String identificacion);
     Cliente buscarCliente(String Identificacion);
     void ActualizarCliente(String nombre, String identificacion);
     void eliminarCliente(String Identificacion);

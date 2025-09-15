@@ -24,7 +24,7 @@ public class Cliente {
         this.nombre = nombre;
     }
 
-    public String getIdentificacion() {
+    public String getIdentificacion(String number) {
         return identificacion;
     }
 

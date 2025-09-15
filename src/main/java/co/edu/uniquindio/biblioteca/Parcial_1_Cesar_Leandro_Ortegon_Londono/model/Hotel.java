@@ -2,6 +2,7 @@ package co.edu.uniquindio.biblioteca.Parcial_1_Cesar_Leandro_Ortegon_Londono.mod
 
 import co.edu.uniquindio.biblioteca.Parcial_1_Cesar_Leandro_Ortegon_Londono.service.IHotelService;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -12,13 +13,6 @@ public class Hotel implements IHotelService {
     private List<Cliente> listaClientes = new ArrayList<>();
     private List<Reserva> listaReservas = new ArrayList<>();
     private List<Servicio> servicios = new ArrayList<>();
-
-    public Hotel(List<Habitacion> habitaciones, List<Cliente> listaClientes, List<Reserva> listaReservas, List<Servicio> servicios) {
-        this.habitaciones = habitaciones;
-        this.listaClientes = listaClientes;
-        this.listaReservas = listaReservas;
-        this.servicios = servicios;
-    }
 
     public List<Habitacion> getHabitaciones() {
         return habitaciones;
@@ -53,15 +47,16 @@ public class Hotel implements IHotelService {
     }
 
     @Override
-    public void crearCliente(String nombre, String identificacion) {
+    public Cliente crearCliente(String nombre, String identificacion) {
         Cliente cliente = new Cliente(nombre, identificacion);
         this.listaClientes.add(cliente);
+        return cliente;
     }
 
     @Override
     public Cliente buscarCliente(String identificacion) {
         for (Cliente cliente : this.listaClientes) {
-            if (cliente.getIdentificacion().equals(identificacion)) {
+            if (cliente.getIdentificacion("12345678").equals(identificacion)) {
                 return cliente;
             }
         }
@@ -73,7 +68,7 @@ public class Hotel implements IHotelService {
     public void ActualizarCliente(String nombre, String identificacion) {
         for(int i = 0; i<listaClientes.size(); i++) {
             Cliente cliente = listaClientes.get(i);
-            if(cliente.getIdentificacion().equals(identificacion)) {
+            if(cliente.getIdentificacion("12345678").equals(identificacion)) {
                 cliente.setNombre(nombre);
                 cliente.setIdentificacion(identificacion);
                 return;
@@ -84,7 +79,7 @@ public class Hotel implements IHotelService {
     @Override
     public void eliminarCliente(String Identificacion) {
         for(int i = 0; i<listaClientes.size(); i++) {
-            if(listaClientes.get(i).getIdentificacion().equals(Identificacion)) {
+            if(listaClientes.get(i).getIdentificacion("12345678").equals(Identificacion)) {
                 listaClientes.remove(i);
                 return;
             }
@@ -97,9 +92,10 @@ public class Hotel implements IHotelService {
     }
 
     @Override
-    public void crearReserva(Date fechaEntrada, Date fechaSalida) {
+    public Reserva crearReserva(LocalDate fechaEntrada, LocalDate fechaSalida) {
         Reserva reserva = new Reserva(fechaEntrada, fechaSalida);
         this.listaReservas.add(reserva);
+        return reserva;
     }
 
     @Override
@@ -144,21 +140,24 @@ public class Hotel implements IHotelService {
     }
 
     @Override
-    public void crearServicioHabitacion(String nombreServicio, double costoServicio) {
+    public Servicio crearServicioHabitacion(String nombreServicio, double costoServicio) {
         ServicioHabitacion servicioHabitacion = new ServicioHabitacion(nombreServicio, costoServicio);
         this.servicios.add(servicioHabitacion);
+        return null;
     }
 
     @Override
-    public void crearServicioSpa(String nombreServicio, double costoServicio) {
+    public Servicio crearServicioSpa(String nombreServicio, double costoServicio) {
         ServicioSpa servicioSpa = new ServicioSpa(nombreServicio, costoServicio);
         this.servicios.add(servicioSpa);
+        return null;
     }
 
     @Override
-    public void crearServicioRestaurante(String nombreServicio, double costoServicio) {
+    public Servicio crearServicioRestaurante(String nombreServicio, double costoServicio) {
         ServicioRestaurante servicioRestaurante = new ServicioRestaurante(nombreServicio, costoServicio);
         this.servicios.add(servicioRestaurante);
+        return null;
     }
 
     @Override
